@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    li{
+        list-style: none;
+        width: 0;
+        float: left;
+    }
+}
+
+.mixin(@size,@color,@index,@fx){
+    ul{
+        li:nth-child(@{index}){
+            border: @size solid transparent;
+            border-@{fx}:@size solid @color;
+        }
+    }
+}
+
+.mixin(40px,red,1,right);
+.mixin(20px,blue,2,right);
+.mixin(40px,red,3,top);
+.mixin(20px,#000000,4,top);
+.mixin(40px,red,5,left);
+.mixin(20px,blue,6,left);
+.mixin(40px,red,7,bottom);
+.mixin(20px,blue,8,bottom);
